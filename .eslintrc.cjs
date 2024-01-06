@@ -28,5 +28,6 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
     "react/no-unknown-property": ["error", { ignore: ["css"] }],
+    "react/react-in-jsx-scope": "off",
   },
 };

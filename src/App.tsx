@@ -1,10 +1,12 @@
-import React from "react";
-import EmotionTutorial from "./EmotionTutorial";
+import TodoList from "./recoiltutorial/TodoList";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
     <>
-      <EmotionTutorial />
+      <RecoilRoot>
+        <TodoList />
+      </RecoilRoot>
     </>
   );
 }
