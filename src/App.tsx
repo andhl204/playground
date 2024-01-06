@@ -1,7 +1,12 @@
 import React from "react";
+import EmotionTutorial from "./EmotionTutorial";
 
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <EmotionTutorial />
+    </>
+  );
 }
 
 export default App;
