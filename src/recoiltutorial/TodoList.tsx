@@ -3,12 +3,13 @@ import {
   filteredTodoListState,
   todoListFilterState,
   todoListStatsState,
-} from "../atoms/todo";
+} from "../recoil/todo";
 import TodoItemCreator from "./TodoItemCreator";
 import TodoItem from "./TodoItem";
 
 export default function TodoList() {
   const todoList = useRecoilValue(filteredTodoListState);
+
   return (
     <>
       <TodoListStats />
