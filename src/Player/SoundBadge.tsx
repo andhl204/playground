@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
+import { useRecoilValue } from "recoil";
+import { musicState } from "../recoil/music";
 
 export default function SoundBadge() {
+  const { title, artist } = useRecoilValue(musicState);
+
   return (
     <SoundBadgeWrapper>
       <AlbumImage />
       <TitleContextContainer>
-        <LightLink>
-          veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery
-        </LightLink>
-        <Title>John Smith - Hello</Title>
+        <LightLink>{title}</LightLink>
+        <Title>{artist}</Title>
       </TitleContextContainer>
     </SoundBadgeWrapper>
   );

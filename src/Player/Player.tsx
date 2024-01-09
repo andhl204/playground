@@ -4,6 +4,9 @@ import ControlButtons from "./ControlButtons";
 import PlaybackTimeline from "./PlaybackTimeline";
 import SoundBadge from "./SoundBadge";
 import Actions from "./Actions";
+import { RecoilRoot } from "recoil";
+import AudioTag from "./AudioTag";
+import VolumeButton from "./VolumeButton";
 
 export default function Player() {
   return (
@@ -18,14 +21,18 @@ export default function Player() {
           }
         `}
       />
-      <OuterBar>
-        <InnerBar>
-          <ControlButtons />
-          <PlaybackTimeline />
-          <SoundBadge />
-          <Actions />
-        </InnerBar>
-      </OuterBar>
+      <RecoilRoot>
+        <OuterBar>
+          <InnerBar>
+            <ControlButtons />
+            <PlaybackTimeline />
+            <VolumeButton />
+            <SoundBadge />
+            <Actions />
+          </InnerBar>
+        </OuterBar>
+        <AudioTag />
+      </RecoilRoot>
     </>
   );
 }
