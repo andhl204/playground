@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useSetRecoilState } from "recoil";
 import { currentTimeState, musicRefState, musicState, playingState } from "../recoil/music";
-import { throttle } from "../util/throttle";
 
 export default function AudioTag() {
   const setMusic = useSetRecoilState(musicState);
@@ -21,10 +20,9 @@ export default function AudioTag() {
             duration: musicRef.current.duration,
           });
           setMusicRef(musicRef.current);
-          musicRef.current.addEventListener(
-            "timeupdate",
-            () => musicRef.current && setCurrentTime(musicRef.current.currentTime),
-          );
+          musicRef.current.addEventListener("timeupdate", () => {
+            musicRef.current && setCurrentTime(musicRef.current.currentTime);
+          });
           musicRef.current.addEventListener("play", () => setPlaying(true));
           musicRef.current.addEventListener("pause", () => setPlaying(false));
         }
